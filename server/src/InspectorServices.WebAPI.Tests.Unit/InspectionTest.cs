@@ -1,6 +1,3 @@
-using FootballServices.Domain.DTOs;
-using FootballServices.Domain.Models;
-using FootballServices.WebAPI.Tests.Unit;
 using InspectorServices.WebAPI.DTOs;
 using InspectorServices.WebAPI.Tests.Unit;
 using Microsoft.AspNetCore.TestHost;
@@ -63,7 +60,7 @@ namespace FoorballServices.WebAPI.Tests.Unit
             response.EnsureSuccessStatusCode();
         }
 
-¡        [Fact]
+        [Fact]
         public async Task Put_manager_ok()
         {
             var toSend = GetToSend();

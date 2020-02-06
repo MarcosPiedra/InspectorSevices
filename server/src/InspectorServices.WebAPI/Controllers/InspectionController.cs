@@ -74,7 +74,7 @@ namespace InspectorServices.WebAPI.Controllers
         [HttpGet("StatusList")]
         [ProducesResponseType(typeof(List<StatusResponse>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<List<StatusResponse>>> GetStatus()
+        public ActionResult<List<StatusResponse>> GetStatus()
         {
             var statusList = ((Status[])Enum.GetValues(typeof(Status))).ToList();
 

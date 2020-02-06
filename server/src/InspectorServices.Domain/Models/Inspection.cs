@@ -19,5 +19,6 @@ namespace InspectorServices.Domain.Models
         public string Address { get; set; }
         public string Observations { get; set; }
         public string Status { get; set; }
+        public int InspectorId { get; set; }
     }
 }

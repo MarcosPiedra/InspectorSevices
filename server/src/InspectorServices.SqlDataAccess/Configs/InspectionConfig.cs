@@ -18,6 +18,7 @@ namespace InspectorServices.SqlDataAccess.Configs
             builder.Property(m => m.Date).HasColumnName("Date")
                                          .HasConversion<string>(); 
             builder.Property(m => m.Observations).HasColumnName("Observations");
+            builder.Property(m => m.InspectorId).HasColumnName("InspectorId");
             builder.Property(m => m.Status).HasColumnName("Status")
                                            .HasConversion<int>(); 
 

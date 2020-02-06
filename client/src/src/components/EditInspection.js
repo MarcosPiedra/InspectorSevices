@@ -8,39 +8,32 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 class EditInspection extends Component {
-
     state = {
         opened: true
     }
-
     constructor(props) {
         super(props);
     }
-
-    handleClose = () => {
-        this.setState({ opened: false })
-    };
-
     render() {
         return (
-            <Dialog open={this.state.opened} onClose={this.handleClose} >
+            <Dialog open={this.state.opened} onClose={this.props.handleClose} >
                 <DialogTitle >Subscribe</DialogTitle>
                 <DialogContent>
-                <DialogContentText>
+                    <DialogContentText>
                         To subscribe to this website, please enter your email address here. We will send updates occasionally.
                 </DialogContentText>
-                    <TextField autoFocus margin="dense" id="name" label={this.props.rowData.name} type="email" fullWidth />
-					<TextField autoFocus margin="dense" id="name" label={this.props.rowData.name} type="email" fullWidth />
-					<TextField autoFocus margin="dense" id="name" label={this.props.rowData.name} type="email" fullWidth />
-					<TextField autoFocus margin="dense" id="name" label={this.props.rowData.name} type="email" fullWidth />
-					<TextField autoFocus margin="dense" id="name" label={this.props.rowData.name} type="email" fullWidth />
-					<TextField autoFocus margin="dense" id="name" label={this.props.rowData.name} type="email" fullWidth />
+                    <TextField autoFocus id="date" value={this.props.rowData.date} type="text" fullWidth />
+                    <TextField autoFocus id="customer" value={this.props.rowData.customer} type="text" fullWidth />
+                    <TextField autoFocus id="adress" value={this.props.rowData.adress} type="text" fullWidth />
+                    <TextField autoFocus id="observation" value={this.props.rowData.observation} type="text" fullWidth />
+                    <TextField autoFocus id="statusId" value={this.props.rowData.statusId} type="text" fullWidth />
+                    <TextField autoFocus id="inspectorId" value={this.props.rowData.inspectorId} type="text" fullWidth />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={this.handleClose} color="primary">
-                        {this.props.isNew ? 'Add' : 'Update'} 
+                    <Button onClick={this.props.handleClose} color="primary">
+                        {this.props.isNew ? 'Add' : 'Update'}
                     </Button>
-                    <Button onClick={this.handleClose} color="primary">
+                    <Button onClick={this.props.handleClose} color="primary">
                         Cancel
                     </Button>
                 </DialogActions>

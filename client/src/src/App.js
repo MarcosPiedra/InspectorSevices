@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import NavBar from './NavBar'
-import InspectionTable from './InspectionTable'
+import NavBar from './components/NavBar'
+import InspectionTable from './components/InspectionTable'
 
 class App extends Component {
   render() {

@@ -11,5 +11,6 @@ namespace InspectorServices.WebAPI.DTOs
         public string Address { get; set; }
         public string Observations { get; set; }
         public int Status { get; set; }
+        public int InspectorId { get; internal set; }
     }
 }
