@@ -1,0 +1,21 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:3143",
+      "sslPort": 44364
+    }
+  },
+  "profiles": {
+    "FootballServices.WebAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+	  "launchUrl": "api/v1/Manager",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000"
+    }
+  }
+}
