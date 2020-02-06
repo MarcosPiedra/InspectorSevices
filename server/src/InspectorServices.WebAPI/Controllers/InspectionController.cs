@@ -71,6 +71,26 @@ namespace InspectorServices.WebAPI.Controllers
             return managerResponse;
         }
 
+        [HttpGet("StatusList")]
+        [ProducesResponseType(typeof(List<StatusResponse>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<ActionResult<List<StatusResponse>>> GetStatus()
+        {
+            var statusList = ((Status[])Enum.GetValues(typeof(Status))).ToList();
+
+            if (statusList.Count == 0)
+            {
+                return NotFound();
+            }
+
+            var statusResponseList = new List<StatusResponse>();
+            statusList.ForEach(s => statusResponseList.Add(new StatusResponse() { Id = (int)s, Name = s.ToString() }));
+
+            logger.LogInformation($"GetStatus");
+
+            return statusResponseList;
+        }
+
         [HttpPost]
         [ProducesResponseType(typeof(ValidationResult), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
