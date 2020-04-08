@@ -6,5 +6,5 @@ Client: Simple client for show inspectors.
 
 Technologies:
 - EFCore
-- Automapping
+- Automapper
 - FluentValidation
